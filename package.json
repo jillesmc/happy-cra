@@ -30,7 +30,12 @@
     "type-check": "tsc --pretty --noEmit",
     "test-all": "yarn lint && yarn type-check"
   },
-
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }
+  },
   "lint-staged": {
     "*.@(ts|tsx)": [
       "yarn lint",
@@ -69,6 +74,7 @@
     "eslint-plugin-react-hooks": "^4.1.2",
     "eslint-plugin-simple-import-sort": "^5.0.3",
     "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
     "prettier": "^2.1.2"
   }
 }
