@@ -31,6 +31,12 @@
     "test-all": "yarn lint && yarn type-check"
   },
 
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
